@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 export const verifyJWT = (token) => {
-  return jwt.verify(token, process.env.JWT_SECRET, {
+  return jwt.verify(token, process.env.JWT_SECRET_KEY, {
     algorithms: ["HS256"],
   });
 };
