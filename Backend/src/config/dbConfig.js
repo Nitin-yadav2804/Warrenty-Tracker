@@ -6,7 +6,7 @@ export default async function connectDB() {
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('Connected to MongoDB');
     } catch(error) {
-        console.log('Something went wrong while connecting to MongoDB:');
-        console.error(error);
+        console.log('Something went wrong while connecting to MongoDB:', error.message);
+        throw error;
     }
 }
